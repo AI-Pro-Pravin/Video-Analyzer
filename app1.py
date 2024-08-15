@@ -4,7 +4,7 @@ from transformers import pipeline
 import streamlit as st
 
 import subprocess
-subprocess.run(["ffdl","install","--add-path"])
+subprocess.run(["ffdl","install","--add-path","-y"])
 
 model = whisper.load_model('base')
 pipe = pipeline(model="distilbert/distilbert-base-uncased-finetuned-sst-2-english")
