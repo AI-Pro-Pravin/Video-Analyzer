@@ -1,0 +1,8 @@
+Flask
+fastapi
+openai
+openai-whisper
+moviepy
+transformers
+uvicorn
+gunicorn
