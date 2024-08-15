@@ -2,6 +2,8 @@ from pydub import AudioSegment
 import whisper
 from transformers import pipeline
 import streamlit as st
+import static_ffmpeg
+static_ffmpeg.add_paths()
 
 model = whisper.load_model('base')
 pipe = pipeline(model="distilbert/distilbert-base-uncased-finetuned-sst-2-english")
@@ -18,7 +20,7 @@ if uploaded_file is not None:
     with st.spinner('Extracting audio from video...'):
         audio = AudioSegment.from_file(uploaded_file)
         audio.export('sample1.mp3', format="mp3")
-    
+
     with st.spinner('Transcribing audio...'):
         result = model.transcribe('sample1.mp3',word_timestamps=True)
 
