@@ -2,7 +2,6 @@ streamlit
 openai
 openai-whisper
 transformers
-ffmpeg-downloader
+static_ffmpeg
 pydub
 moviepy
-ffprobe
