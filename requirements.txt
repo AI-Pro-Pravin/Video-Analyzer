@@ -1,6 +1,7 @@
 streamlit
 openai
 openai-whisper
-moviepy
 transformers
 ffmpeg
+pydub
+moviepy
