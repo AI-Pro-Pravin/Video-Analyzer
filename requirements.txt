@@ -3,5 +3,6 @@ openai
 openai-whisper
 transformers
 static_ffmpeg
+ffmpeg-downloader
 pydub
 moviepy

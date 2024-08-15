@@ -2,8 +2,9 @@ from pydub import AudioSegment
 import whisper
 from transformers import pipeline
 import streamlit as st
-import static_ffmpeg
-static_ffmpeg.add_paths()
+
+import ffmpeg_downloader
+ffmpeg_downloader.add_path()
 
 model = whisper.load_model('base')
 pipe = pipeline(model="distilbert/distilbert-base-uncased-finetuned-sst-2-english")
