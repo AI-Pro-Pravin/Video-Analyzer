@@ -1,8 +1,5 @@
-Flask
-fastapi
+streamlit
 openai
 openai-whisper
 moviepy
 transformers
-uvicorn
-gunicorn
