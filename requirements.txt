@@ -5,4 +5,4 @@ transformers
 ffmpeg-downloader
 pydub
 moviepy
-ffdl install --add-path
+ffprobe
