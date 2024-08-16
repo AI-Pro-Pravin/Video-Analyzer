@@ -1,6 +1,10 @@
 from pydub import AudioSegment
 import streamlit as st
-import ffmpeg
+
+import subprocess
+
+subprocess.run(["sudo", "apt-get", "update"])
+subprocess.run(["sudo", "apt-get", "install","-y", "ffmpeg"])
 
 # Streamlit app layout
 st.title("Video Analysis: Speech-to-Text and Sentiment Analysis")
