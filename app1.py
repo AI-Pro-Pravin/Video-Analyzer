@@ -4,7 +4,12 @@ from transformers import pipeline
 import streamlit as st
 
 import subprocess
-subprocess.run(["ffdl","install","--add-path","-y"])
+from static_ffmpeg import run
+# Platform binaries are installed on the first run of below.
+ffmpeg, ffprobe = run.get_or_fetch_platform_executables_else_raise()
+# ffmpeg, ffprobe will be paths to ffmpeg and ffprobe.
+subprocess.check_output([ffmpeg, "-version"])
+subprocess.check_output([ffprobe, "-version"])
 
 model = whisper.load_model('base')
 pipe = pipeline(model="distilbert/distilbert-base-uncased-finetuned-sst-2-english")
