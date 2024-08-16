@@ -1,8 +1,18 @@
-import ffmpeg_downloader as ffdl
+from pydub import AudioSegment
+import streamlit as st
+import ffmpeg
 
-ffdl.ffmpeg_dir     # FFmpeg binaries directory
-ffdl.ffmpeg_version # version string of the intalled FFmpeg
-ffdl.ffmpeg_path    # full path of the FFmpeg binary
-ffdl.ffprobe_path   # full path of the FFprobe binary
-ffdl.ffplay_path    # full path of the FFplay binary
+# Streamlit app layout
+st.title("Video Analysis: Speech-to-Text and Sentiment Analysis")
+
+# File upload
+#uploaded_file = st.text_input("Upload a video file path",None)
+uploaded_file = st.file_uploader("Upload a video file",type=['mp4'])
+
+if uploaded_file is not None:
+    # Convert video to audio
+    with st.spinner('Extracting audio from video...'):
+        audio = AudioSegment.from_file(uploaded_file)
+        audio.export('sample1.mp3', format="mp3")
+
 print('done')
